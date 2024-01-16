@@ -27,8 +27,10 @@ fun NavCompose() {
                     actions.manifest(roverName)
                 }
             }
-            composable(Destinations.Manifest) {
-                ManifestScreen()
+            composable(Destinations.Manifest) { backStackEntry ->
+                ManifestScreen(
+                    roverName = backStackEntry.arguments?.getString("roverName")
+                )
             }
         }
     }

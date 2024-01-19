@@ -10,7 +10,6 @@ sealed class RoverManifestUiState {
     object Error : RoverManifestUiState()
 }
 
-data
 
 class RoverManifestUiModel(
     val sol: String,

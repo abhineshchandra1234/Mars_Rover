@@ -1,6 +1,18 @@
 package com.example.marsrover.domain.model
 
-data class RoverManifestUiModel(
+
+sealed class RoverManifestUiState {
+    data class Success(
+        val roverManifestUiModel: List<RoverManifestUiModel>
+    ) : RoverManifestUiState()
+
+    object Loading : RoverManifestUiState()
+    object Error : RoverManifestUiState()
+}
+
+data
+
+class RoverManifestUiModel(
     val sol: String,
     val earthDate: String,
     val photoNumber: String

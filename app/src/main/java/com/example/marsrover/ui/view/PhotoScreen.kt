@@ -26,7 +26,11 @@ fun PhotoScreen(
             is RoverPhotoUiState.Success -> PhotoList(
                 modifier = modifier,
                 roverPhotoUiModelList = roverPhotoUiState.roverPhotoUiModelList
-            )
+            ) { roverPhotoUiModel ->
+                marsRoverPhotoViewModel.changeSaveStatus(
+                    roverPhotoUiModel
+                )
+            }
         }
     }
 }

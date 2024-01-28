@@ -3,8 +3,10 @@ package com.example.marsrover.ui.photolist
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marsrover.data.MarsRoverPhotoRepo
+import com.example.marsrover.domain.model.RoverPhotoUiModel
 import com.example.marsrover.domain.model.RoverPhotoUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -26,6 +28,16 @@ class MarsRoverPhotoViewModel @Inject constructor(
             _roverPhotoUiState.value = RoverPhotoUiState.Loading
             marsRoverPhotoRepo.getMarsRoverPhoto(roverName, sol).collect {
                 _roverPhotoUiState.value = it
+            }
+        }
+    }
+
+    fun changeSaveStatus(roverPhotoUiModel: RoverPhotoUiModel) {
+        viewModelScope.launch(Dispatchers.IO) {
+            if (roverPhotoUiModel.isSaved) {
+                marsRoverPhotoRepo.removePhoto(roverPhotoUiModel)
+            } else {
+                marsRoverPhotoRepo.savePhoto(roverPhotoUiModel = roverPhotoUiModel)
             }
         }
     }

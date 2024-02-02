@@ -1,5 +1,10 @@
 package com.example.marsrover.ui.view
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -48,6 +53,7 @@ fun Photo(
     roverPhotoUiModel: RoverPhotoUiModel,
     onClick: (roverPhotoUiModel: RoverPhotoUiModel) -> Unit
 ) {
+    val duration = 500
     Card(
         modifier = Modifier
             .padding(16.dp)
@@ -60,17 +66,31 @@ fun Photo(
         ) {
 
             Row(modifier = Modifier.fillMaxWidth()) {
-                Image(
-                    painter = painterResource(
-                        id =
-                        if (roverPhotoUiModel.isSaved) {
-                            R.drawable.ic_save
-                        } else {
-                            R.drawable.ic_save_outline
-                        }
-                    ),
-                    contentDescription = "save icon"
-                )
+                AnimatedContent(
+                    targetState = roverPhotoUiModel.isSaved,
+                    label = "",
+                    transitionSpec = {
+                        scaleIn(
+                            animationSpec = tween(
+                                durationMillis = duration,
+                                delayMillis = duration
+                            )
+                        ) togetherWith scaleOut(animationSpec = tween(durationMillis = duration))
+                    }
+                ) { targetState ->
+
+                    Image(
+                        painter = painterResource(
+                            id =
+                            if (targetState) {
+                                R.drawable.ic_save
+                            } else {
+                                R.drawable.ic_save_outline
+                            }
+                        ),
+                        contentDescription = "save icon"
+                    )
+                }
                 Text(
                     text = roverPhotoUiModel.roverName, modifier = Modifier.padding(16.dp),
                     style = MaterialTheme.typography.titleMedium

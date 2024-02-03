@@ -1,5 +1,5 @@
 # Mars Rover
-## This project fetches a list of rovers that went to Mars. It fetches a list of their mission and another list of photos taken in that mission. It also saves rover photos along with mission details in the database.
+This project fetches a list of rovers that went to Mars. It fetches a list of their mission and another list of photos taken in that mission. It also saves rover photos along with mission details in the database.
 ## Tech Stack
 - MVVM
 - Jetpack Compose

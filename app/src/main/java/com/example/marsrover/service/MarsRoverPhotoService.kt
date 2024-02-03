@@ -11,7 +11,7 @@ import retrofit2.http.Query
 
 interface MarsRoverPhotoService {
 
-    @GET("mars-photos/api/v1/rovers/{rover_name}/photos?api_key=UJuCZAoCw2hFh8aaRRPe9zgimzHXqY85gZuN2xjJ")
+    @GET("mars-photos/api/v1/rovers/{rover_name}/photos?api_key=API_KEY")
     suspend fun getMarsRoverPhotos(
         @Path("rover_name") roverName: String,
         @Query("sol") sol: String

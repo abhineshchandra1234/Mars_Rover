@@ -16,6 +16,7 @@
 - Rovers Mission photo list
 - Save Rover Photo along with mission details
 - Support for light and dark mode
+- Animations for saving mission details
 ## API Used
 - Free NASA API used in the project
 - [NASA API](https://api.nasa.gov/)

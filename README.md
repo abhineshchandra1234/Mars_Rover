@@ -20,7 +20,7 @@ This project fetches a list of rovers that went to Mars. It fetches a list of th
 - Jetpack Compose
 - [Navigation Compose](https://developer.android.com/guide/navigation) - Navigation refers to the interactions that let us navigate across, into and back out from different pieces of content in our app.
 - [Lifecycle Compose](https://developer.android.com/jetpack/androidx/releases/lifecycle) - lifecycle-aware components perform actions in response to a change in the lifecycle status of another component. like — activities and fragments.
-- Room
+- [Room](https://developer.android.com/training/data-storage/room) - This library provides an abstraction layer over SQLite to allow easy database access while harnessing the full power of SQLite.
 - Google font
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - For asynchronous and more..

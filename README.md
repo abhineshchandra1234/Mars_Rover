@@ -18,8 +18,8 @@ This project fetches a list of rovers that went to Mars. It fetches a list of th
 ## Libraries
 - MVVM
 - Jetpack Compose
-- Navigation Compose
-- Lifecycle Compose
+- [Navigation Compose](https://developer.android.com/guide/navigation) - Navigation refers to the interactions that let us navigate across, into and back out from different pieces of content in our app.
+- [Lifecycle Compose](https://developer.android.com/jetpack/androidx/releases/lifecycle) - lifecycle-aware components perform actions in response to a change in the lifecycle status of another component. like — activities and fragments.
 - Room
 - Google font
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
